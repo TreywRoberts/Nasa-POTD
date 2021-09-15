@@ -38,11 +38,12 @@ function Display({likedListt}){
             setClassName('like')
         }
         console.log(photo.date)
-    },[inputValue, photo.date] )
+    },[inputValue, photo.date] ) //eslint-disable-line
 
     const handleCheck = (date)=> {
         return likedList.some(function(el){
             return el.date === date
+
         });
     }
   
@@ -65,8 +66,6 @@ function Display({likedListt}){
       setInputValue(temp)
   }
 
-
-
   const changeClass = () =>{
     if(handleCheck(photo.date) === true){
         console.log('photo is NOT in array')
@@ -85,7 +84,6 @@ function Display({likedListt}){
   const API_KEY = 'DXUUGOwFmoJZyyyeWI355njm4JXCa4licvy0cZNu'
 
   localStorage.setItem("likedList", JSON.stringify(likedList));
-//   localStorage.setItem("liked", JSON.stringify(handleCheck(photo.date)));
 
 
   return (
@@ -93,7 +91,7 @@ function Display({likedListt}){
       <div className='display-box'>
 
         <h2>{photo.title}</h2>
-        <img src={photo.url} alt='photo of the day'/>
+        <img src={photo.url} alt='pic of the day'/>
           <div className={className} onClick={changeClass} >
           <FontAwesomeIcon icon={icon} size='2x' />
           <p>{liked}</p>

@@ -6,17 +6,14 @@ export const StyledDisplay = styled.div`
   justify-content: center;
   align-items:center;
   color: white;
-
   .display-box{
     display: flex;
     flex-direction:column ;
     align-items: center;
     padding: 3%;
-    /* justify-content: center; */
     background-color: black;
     color: white;
     width: 49%;
-    
   }                                                                                                                   
     img{
       width: 40vw;
@@ -31,7 +28,6 @@ export const StyledDisplay = styled.div`
       width: 49%;
       padding: 3%;
       margin-top: -3%
-
   }
   .like{
     display: flex;
@@ -60,5 +56,4 @@ export const StyledDisplay = styled.div`
   .liked p{
     font-size: 1.4rem;
   }
-
   `

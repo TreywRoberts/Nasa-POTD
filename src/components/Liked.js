@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { StyledLiked} from './../styles/StyledLiked'
 
-function Liked({likedListt, removePhoto, hasBeenLiked}){
+function Liked({likedListt, removePhoto}){
 
-    console.log(hasBeenLiked)
     
     if(likedListt.length <= 0){
         return(
