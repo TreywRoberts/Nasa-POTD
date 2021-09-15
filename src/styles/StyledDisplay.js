@@ -18,8 +18,9 @@ export const StyledDisplay = styled.div`
     width: 49%;
     
   }                                                                                                                   
-  img{
-    width:50%;
+    img{
+      width: 40vw;
+      height: 40vh;
   }
   .search{
       display: flex;

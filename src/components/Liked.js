@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyledLiked} from './../styles/StyledLiked'
 
-function Liked(){
-    const liked = JSON.parse(sessionStorage.getItem('likedList'))
-    if(liked.length <= 0){
+function Liked({likedListt, removePhoto, hasBeenLiked}){
+
+    console.log(hasBeenLiked)
+    
+    if(likedListt.length <= 0){
         return(
             <StyledLiked>
                 <div className='noPhoto'>
@@ -15,13 +17,16 @@ function Liked(){
 
         return (
             <StyledLiked>
-                <h2>Photos You Liked</h2>
                 <div className='display-box'>
-                {liked.map(photo=>(
-                    <div>
+                <h2>Photos You Liked</h2>
+                {likedListt.map(photo=>(
+                    <div key={photo.date}>
                     <img src={photo.url} />
                     <h3>{photo.title}</h3>    
                     <p>{photo.date}</p>
+                    <div>
+                    <button onClick={()=>{removePhoto(photo)}}>Remove</button>
+                    </div>
                     </div>
                 ))
                     }

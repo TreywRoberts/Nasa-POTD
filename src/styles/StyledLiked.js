@@ -2,17 +2,24 @@ import styled from 'styled-components'
 
 export const StyledLiked = styled.div`
   text-align: center;
-  justify-content: center;
-  color: white;
-  background-color:black;
-  width: 80%;
-  margin-left:10%;
 
+  /* width: 80%;
+  margin-left:10%; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items:center;
+  color: white;
 
   .display-box{
-      display: flex;
-      flex-direction:column ;
-      align-items: center;
+    display: flex;
+    flex-direction:column ;
+    align-items: center;
+    padding: 3%;
+    /* justify-content: center; */
+    background-color: black;
+    color: white;
+    width: 49%;
 
   }
   .display-box h3{
@@ -20,8 +27,8 @@ export const StyledLiked = styled.div`
   }
 
   img{
-      width: 55vw;
-      height: 50vh;
+    width: 40vw;
+    height: 40vh;
   }
 
   .noPhoto{
