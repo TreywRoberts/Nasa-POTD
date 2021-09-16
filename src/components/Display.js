@@ -7,16 +7,15 @@ import {faHeart} from '@fortawesome/free-solid-svg-icons'
 import { StyledDisplay } from "../styles/StyledDisplay";
 
 
-function Display({likedListt}){
+function Display({LSLikedList}){
     
     const[photo, setPhoto] = useState({})
     const[temp, setTemp] = useState('')
     const[inputValue, setInputValue] = useState('')
-    const[likedList, setLikedList] = useState(likedListt);
+    const[likedList, setLikedList] = useState(LSLikedList);
     const[className, setClassName] = useState('like')
     const[liked, setLiked] = useState('Like')
     const[icon, setIcon] = useState(farHeart)
-    const[test,setTest] = useState(undefined)    
     
     useEffect(() =>{
         const fetchImage = () =>{
@@ -28,10 +27,7 @@ function Display({likedListt}){
             })
         }
         fetchImage()
-        setTest(true)
-        console.log(test)
-        // console.log(photo)
-        // console.log(handleCheck(photo.date), 'IN CALL')
+    
         if(handleCheck(photo.date) === true){
             setIcon(faHeart)
             setLiked('Unlike')
@@ -46,7 +42,6 @@ function Display({likedListt}){
     const handleCheck = (date)=> {
         return likedList.some(function(el){
             return el.date === date
-
         });
     }
   

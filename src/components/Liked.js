@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import { StyledLiked} from './../styles/StyledLiked'
 
-function Liked({likedListt, removePhoto}){
-
-    
-    if(likedListt.length <= 0){
+function Liked({LSLikedList, removePhoto}){
+  
+    if(LSLikedList.length <= 0){
         return(
             <StyledLiked>
                 <div className='noPhoto'>
@@ -13,12 +12,11 @@ function Liked({likedListt, removePhoto}){
             </StyledLiked>
         )
     } else{
-
         return (
             <StyledLiked>
                 <div className='display-box'>
                     <h2>Photos You Liked</h2>
-                    {likedListt.map(photo=>(
+                    {LSLikedList.map(photo=>(
                         <div key={photo.date}>
                             <img src={photo.url} alt='prev liked pic' />
                             <h3>{photo.title}</h3>    
@@ -26,8 +24,8 @@ function Liked({likedListt, removePhoto}){
                             <button onClick={()=>{removePhoto(photo)}}>Remove</button>
 
                         </div>
-                    ))
-                        }
+                        ))
+                    }
                 </div>
             </StyledLiked>
   );

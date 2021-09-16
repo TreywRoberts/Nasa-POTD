@@ -6,6 +6,7 @@ export const StyledDisplay = styled.div`
   justify-content: center;
   align-items:center;
   color: white;
+
   .display-box{
     display: flex;
     flex-direction:column ;
@@ -14,11 +15,13 @@ export const StyledDisplay = styled.div`
     background-color: black;
     color: white;
     width: 49%;
-  }                                                                                                                   
-    img{
+  }
+
+   img{
       width: 40vw;
       height: 40vh;
   }
+
   .search{
       display: flex;
       flex-direction: column;
@@ -29,6 +32,7 @@ export const StyledDisplay = styled.div`
       padding: 3%;
       margin-top: -3%
   }
+
   .like{
     display: flex;
     background-color: black;
@@ -36,13 +40,16 @@ export const StyledDisplay = styled.div`
     color:white;
     transition: all 1s ease
   }
+
   .like p{
     font-size: 1.4rem;
   }
+
   .like:hover{
     color: red;
     cursor: pointer;
   }
+
   .liked{
     display: flex;
     background-color: black;
@@ -50,9 +57,11 @@ export const StyledDisplay = styled.div`
     color:red;
     transition: all 1s ease
   }
+
   .liked:hover{
     cursor: pointer;
   }
+  
   .liked p{
     font-size: 1.4rem;
   }

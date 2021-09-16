@@ -1,35 +1,31 @@
 import './App.css';
-import { Route, Link, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 import NavBar from './components/NavBar';
 import Display from './components/Display';
 import Liked from './components/Liked';
-import Test from './components/test';
 
 function App() {
 
   
-  const likedListt = JSON.parse(localStorage.getItem('likedList')) || []
+  const LSLikedList = JSON.parse(localStorage.getItem('likedList')) || []
 
   const removePhoto = (photo) =>{
-    likedListt.splice(likedListt.indexOf(photo), 1);
-    localStorage.setItem('likedList', JSON.stringify(likedListt))
+    LSLikedList.splice(LSLikedList.indexOf(photo), 1);
+    localStorage.setItem('likedList', JSON.stringify(LSLikedList))
     window.location.reload(false);
   }
-  console.log(likedListt, 'local')
+  console.log(LSLikedList, 'local')
 
   return (
     <div className="App">
      <NavBar />
      <Switch>
        <Route path='/liked'>
-         <Liked likedListt={likedListt} removePhoto={removePhoto}  />
-       </Route>
-       <Route path='/test'>
-         <Test />
+         <Liked LSLikedList={LSLikedList} removePhoto={removePhoto}  />
        </Route>
        <Route path='/'>
-         <Display likedListt={likedListt}  />
+         <Display LSLikedList={LSLikedList}  />
        </Route>
      </Switch>
     </div>
