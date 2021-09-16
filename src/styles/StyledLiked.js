@@ -15,10 +15,16 @@ export const StyledLiked = styled.div`
     background-color: black;
     color: white;
     width: 49%;
+    h2{
+        font-size: 2.5rem; 
+    }
+    h3{
+        text-decoration: underline;
+        font-size: 2rem;
+    }
+    p{
+        font-size:1.5rem;
   }
-
-  .display-box h3{
-      text-decoration: underline;
   }
 
   img{
@@ -31,10 +37,12 @@ export const StyledLiked = styled.div`
       height: 5vh;
       margin-bottom:10%;
       background-color: white;
+      font-size: 1.5rem;
       font-weight: bolder;
       border: none;
       transition: all ease 1s;
   }
+
   button:hover{
       background: red;
   }

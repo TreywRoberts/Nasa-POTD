@@ -15,7 +15,7 @@ function Liked({LSLikedList, removePhoto}){
         return (
             <StyledLiked>
                 <div className='display-box'>
-                    <h2>Photos You Liked</h2>
+                    <h2>Photos You Have Liked</h2>
                     {LSLikedList.map(photo=>(
                         <div key={photo.date}>
                             <img src={photo.url} alt='prev liked pic' />

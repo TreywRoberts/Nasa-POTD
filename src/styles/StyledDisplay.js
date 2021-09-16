@@ -15,6 +15,15 @@ export const StyledDisplay = styled.div`
     background-color: black;
     color: white;
     width: 49%;
+    h2{
+        font-size: 2.5rem;
+    };
+    h3{
+        font-size: 2rem;
+    }
+  }
+    p{
+        font-size:1.5rem;
   }
 
    img{
@@ -30,7 +39,28 @@ export const StyledDisplay = styled.div`
       background-color: black;
       width: 49%;
       padding: 3%;
-      margin-top: -3%
+      margin-top: -3%;
+      h4{
+        font-size: 2rem;
+      }
+      input{
+          font-size: 2rem;
+      }
+      button{
+          height: 2.7rem;
+          margin-top: 2%;
+          font-size: 1.5rem;
+          font-weight: bolder;
+          border: none;
+          transition: ease all 1s;
+      }
+      button:hover{
+          background: red;
+      }
+  }
+  form{
+      display: flex;
+      flex-direction: column;
   }
 
   .like{
@@ -38,11 +68,11 @@ export const StyledDisplay = styled.div`
     background-color: black;
     align-items: center;
     color:white;
-    transition: all 1s ease
-  }
+    transition: all 1s ease;
+    p{
+        font-size: 2rem;
 
-  .like p{
-    font-size: 1.4rem;
+    }
   }
 
   .like:hover{
@@ -55,14 +85,13 @@ export const StyledDisplay = styled.div`
     background-color: black;
     align-items: center;
     color:red;
-    transition: all 1s ease
+    transition: all 1s ease;
+    p{
+        font-size: 2rem;
+    }
   }
 
   .liked:hover{
     cursor: pointer;
-  }
-  
-  .liked p{
-    font-size: 1.4rem;
   }
   `
