@@ -15,7 +15,8 @@ function Display({likedListt}){
     const[likedList, setLikedList] = useState(likedListt);
     const[className, setClassName] = useState('like')
     const[liked, setLiked] = useState('Like')
-    const[icon, setIcon] = useState(farHeart)    
+    const[icon, setIcon] = useState(farHeart)
+    const[test,setTest] = useState(undefined)    
     
     useEffect(() =>{
         const fetchImage = () =>{
@@ -27,7 +28,10 @@ function Display({likedListt}){
             })
         }
         fetchImage()
-        console.log(handleCheck(photo.date), 'IN CALL')
+        setTest(true)
+        console.log(test)
+        // console.log(photo)
+        // console.log(handleCheck(photo.date), 'IN CALL')
         if(handleCheck(photo.date) === true){
             setIcon(faHeart)
             setLiked('Unlike')
@@ -37,7 +41,6 @@ function Display({likedListt}){
             setLiked('Like')
             setClassName('like')
         }
-        console.log(photo.date)
     },[inputValue, photo.date] ) //eslint-disable-line
 
     const handleCheck = (date)=> {
@@ -47,72 +50,71 @@ function Display({likedListt}){
         });
     }
   
-  const addToLikedList = photo => {
-    setLikedList([...likedList, photo])
-  }
-  const deleteLikedList = (date) => {
-    const newList = likedList.filter((photo) => photo.date !== date)
-    setLikedList(newList)
-  }
-  
-  const changeInput = evt => {
-    const { value } = evt.target;
-    setTemp(value)
-  }
-
-
-  const onClickInput = (e) =>{
-      e.preventDefault();
-      setInputValue(temp)
-  }
-
-  const changeClass = () =>{
-    if(handleCheck(photo.date) === true){
-        console.log('photo is NOT in array')
-        setLiked('Like')
-        deleteLikedList(photo.date)
-        setIcon(farHeart)
-        setClassName('like')
-    }else{
-        console.log('photo is in array')
-        setLiked('Unlike')
-        addToLikedList(photo)
-        setIcon(faHeart)
-        setClassName('liked')
+    const addToLikedList = photo => {
+        setLikedList([...likedList, photo])
     }
-  }
-  const API_KEY = 'DXUUGOwFmoJZyyyeWI355njm4JXCa4licvy0cZNu'
 
-  localStorage.setItem("likedList", JSON.stringify(likedList));
+    const deleteLikedList = (date) => {
+        const newList = likedList.filter((photo) => photo.date !== date)
+        setLikedList(newList)
+    }
+    
+    const changeInput = evt => {
+        const { value } = evt.target;
+        setTemp(value)
+    }
+
+    const onClickInput = (e) =>{
+        e.preventDefault();
+        setInputValue(temp)
+        setTemp('')
+    }
+
+    const changeClass = () =>{
+        if(handleCheck(photo.date) === true){
+            console.log('photo is NOT in array')
+            setLiked('Like')
+            deleteLikedList(photo.date)
+            setIcon(farHeart)
+            setClassName('like')
+        }else{
+            console.log('photo is in array')
+            setLiked('Unlike')
+            addToLikedList(photo)
+            setIcon(faHeart)
+            setClassName('liked')
+        }
+    }
+    const API_KEY = 'DXUUGOwFmoJZyyyeWI355njm4JXCa4licvy0cZNu'
+
+    localStorage.setItem("likedList", JSON.stringify(likedList));
 
 
-  return (
-    <StyledDisplay>
-      <div className='display-box'>
-
-        <h2>{photo.title}</h2>
-        <img src={photo.url} alt='pic of the day'/>
-          <div className={className} onClick={changeClass} >
-          <FontAwesomeIcon icon={icon} size='2x' />
-          <p>{liked}</p>
-          </div>
-        <h3>Date: {photo.date}</h3>
-        <p>
-          {photo.explanation}
-        </p>
-        <p>by {photo.copyright}</p>
-    </div>
-  
-
-      <div className='search'>
-          <h4>Check out some photos from different days!</h4>
-          <p>format: YYYY-MM-DD</p>
-          <form onSubmit={onClickInput}>
-            <input id='input' type='text' onChange={changeInput} value={temp} />
-            <button type='submit'>Submit</button>
-          </form>
-      </div>
-  </StyledDisplay>
-);
-}
+    return(
+        <StyledDisplay>
+            <div className='display-box'>
+                <h2>{photo.title}</h2>
+                <img src={photo.url} alt='pic of the day'/>
+                    <div className={className} onClick={changeClass} >
+                        <FontAwesomeIcon icon={icon} size='2x' />
+                        <p>{liked}</p>
+                    </div>
+                <h3>Date: {photo.date}</h3>
+                <p>{photo.explanation}</p>
+                <p>by {photo.copyright}</p>
+            </div>
+        
+        <div className='search'>
+            <h4>Check out some photos from different days!</h4>
+            <p>format: YYYY-MM-DD</p>
+                <form onSubmit={onClickInput}>
+                    <input id='input' type='text' onChange={changeInput} value={temp} />
+                    <button type='submit'>Submit</button>
+                </form>
+        </div>
+        </StyledDisplay>
+        )
+    };
+              
+                
 export default Display;

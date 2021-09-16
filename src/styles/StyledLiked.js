@@ -25,6 +25,13 @@ export const StyledLiked = styled.div`
     width: 40vw;
     height: 40vh;
   }
+  button{
+      width: 10vw;
+      height: 5vh;
+      margin-bottom:10%;
+      background-color: white;
+      border: none;
+  }
 
   .noPhoto{
       height: 100vh;

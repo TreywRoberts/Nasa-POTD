@@ -17,18 +17,17 @@ function Liked({likedListt, removePhoto}){
         return (
             <StyledLiked>
                 <div className='display-box'>
-                <h2>Photos You Liked</h2>
-                {likedListt.map(photo=>(
-                    <div key={photo.date}>
-                    <img src={photo.url} />
-                    <h3>{photo.title}</h3>    
-                    <p>{photo.date}</p>
-                    <div>
-                    <button onClick={()=>{removePhoto(photo)}}>Remove</button>
-                    </div>
-                    </div>
-                ))
-                    }
+                    <h2>Photos You Liked</h2>
+                    {likedListt.map(photo=>(
+                        <div key={photo.date}>
+                            <img src={photo.url} alt='prev liked pic' />
+                            <h3>{photo.title}</h3>    
+                            <p>{photo.date}</p>
+                            <button onClick={()=>{removePhoto(photo)}}>Remove</button>
+
+                        </div>
+                    ))
+                        }
                 </div>
             </StyledLiked>
   );
