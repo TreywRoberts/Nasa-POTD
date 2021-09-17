@@ -1,22 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
+
 import { StyledLiked} from './../styles/StyledLiked'
+import {mediaType} from './Helpers'
 
 function Liked({LSLikedList, removePhoto}){
-
-    const mediaType = (photo) => {
-        if(photo.media_type === 'image'){
-            return(<div>
-                <img src={photo.url} alt='pic of the day'/>
-            </div>
-                )
-            } else if(photo.media_type === 'video') {
-            return(
-                <iframe
-                    source src={`${photo.url}&controls=0`}>
-                </iframe>
-            ) 
-        }
-    }
   
     if(LSLikedList.length <= 0){
         return(
@@ -26,7 +13,7 @@ function Liked({LSLikedList, removePhoto}){
                 </div>
             </StyledLiked>
         )
-    } else{
+    } else {
         return (
             <StyledLiked>
                 <div className='display-box'>

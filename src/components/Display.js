@@ -5,6 +5,7 @@ import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 import {faHeart} from '@fortawesome/free-solid-svg-icons'
 
 import { StyledDisplay } from "../styles/StyledDisplay";
+import {mediaType} from './Helpers'
 
 
 function Display({LSLikedList}){
@@ -67,21 +68,6 @@ function Display({LSLikedList}){
         setTemp('')
     }
 
-    const mediaType = () => {
-        if(photo.media_type === 'image'){
-            return(<div>
-                <img src={photo.url} alt='pic of the day'/>
-            </div>
-                )
-            } else if(photo.media_type === 'video') {
-            return(
-                <iframe
-                source src={`${photo.url}&controls=0`} >
-                </iframe>
-            ) 
-        }
-    }
-
     const changeClass = () =>{
         if(handleCheck(photo.date) === true){
             console.log('photo is NOT in array')
@@ -107,14 +93,14 @@ function Display({LSLikedList}){
         <StyledDisplay>
             <div className='display-box'>
                 <h2>{photo.title}</h2>
-                {mediaType()}
+                {mediaType(photo)}
+                <p>{photo.copyright}</p>
                     <div className={className} onClick={changeClass} >
                         <FontAwesomeIcon icon={icon} size='2x' />
                         <p>{liked}</p>
                     </div>
                 <h3>Date: {photo.date}</h3>
                 <p>{photo.explanation}</p>
-                <p>by {photo.copyright}</p>
             </div>
         
         <div className='search'>

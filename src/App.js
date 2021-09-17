@@ -15,7 +15,6 @@ function App() {
     localStorage.setItem('likedList', JSON.stringify(LSLikedList))
     window.location.reload(false);
   }
-  console.log(LSLikedList, 'local')
 
   return (
     <div className="App">
