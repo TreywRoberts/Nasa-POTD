@@ -31,11 +31,17 @@ export const StyledDisplay = styled.div`
       height: 40vh;
   }
 
+  iframe{
+    width: 40vw;
+    height: 40vh;
+    border: none;
+  }
+
   .search{
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-bottom: 4%;
+      margin-bottom: 4%;
       background-color: black;
       width: 49%;
       padding: 3%;

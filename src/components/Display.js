@@ -39,6 +39,8 @@ function Display({LSLikedList}){
         }
     },[inputValue, photo.date] ) //eslint-disable-line
 
+    console.log(photo)
+
     const handleCheck = (date)=> {
         return likedList.some(function(el){
             return el.date === date
@@ -65,6 +67,22 @@ function Display({LSLikedList}){
         setTemp('')
     }
 
+    const mediaType = () => {
+        if(photo.media_type === 'image'){
+            return(<div>
+                <img src={photo.url} alt='pic of the day'/>
+                <p>Hellloooo</p>
+            </div>
+                )
+            } else if(photo.media_type === 'video') {
+            return(
+                <iframe
+                    source src={photo.url} >
+                </iframe>
+            ) 
+        }
+    }
+
     const changeClass = () =>{
         if(handleCheck(photo.date) === true){
             console.log('photo is NOT in array')
@@ -84,12 +102,13 @@ function Display({LSLikedList}){
 
     localStorage.setItem("likedList", JSON.stringify(likedList));
 
+    console.log(photo.media_type)
 
     return(
         <StyledDisplay>
             <div className='display-box'>
                 <h2>{photo.title}</h2>
-                <img src={photo.url} alt='pic of the day'/>
+                {mediaType()}
                     <div className={className} onClick={changeClass} >
                         <FontAwesomeIcon icon={icon} size='2x' />
                         <p>{liked}</p>

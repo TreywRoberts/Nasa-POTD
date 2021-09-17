@@ -15,6 +15,7 @@ export const StyledLiked = styled.div`
     background-color: black;
     color: white;
     width: 49%;
+    margin-bottom: 3%;
     h2{
         font-size: 2.5rem; 
     }
@@ -30,6 +31,12 @@ export const StyledLiked = styled.div`
   img{
     width: 40vw;
     height: 40vh;
+  }
+
+  iframe{
+    width: 40vw;
+    height: 40vh;
+    border: none;
   }
 
   button{
