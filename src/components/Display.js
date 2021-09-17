@@ -71,13 +71,12 @@ function Display({LSLikedList}){
         if(photo.media_type === 'image'){
             return(<div>
                 <img src={photo.url} alt='pic of the day'/>
-                <p>Hellloooo</p>
             </div>
                 )
             } else if(photo.media_type === 'video') {
             return(
                 <iframe
-                    source src={photo.url} >
+                source src={`${photo.url}&controls=0`} >
                 </iframe>
             ) 
         }

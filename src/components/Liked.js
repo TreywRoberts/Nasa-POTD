@@ -7,13 +7,12 @@ function Liked({LSLikedList, removePhoto}){
         if(photo.media_type === 'image'){
             return(<div>
                 <img src={photo.url} alt='pic of the day'/>
-                <p>Hellloooo</p>
             </div>
                 )
             } else if(photo.media_type === 'video') {
             return(
                 <iframe
-                    source src={photo.url}>
+                    source src={`${photo.url}&controls=0`}>
                 </iframe>
             ) 
         }
@@ -34,8 +33,6 @@ function Liked({LSLikedList, removePhoto}){
                     <h2>Photos You Have Liked</h2>
                     {LSLikedList.map(photo=>(
                         <div key={photo.date}>
-                            {/* <img src={photo.url} alt='prev liked pic' /> */}
-                            {console.log(photo.media_type)}
                             {mediaType(photo)}
                             <h3>{photo.title}</h3>    
                             <p>{photo.date}</p>
