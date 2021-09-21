@@ -40,7 +40,6 @@ function Display({LSLikedList}){
         }
     },[inputValue, photo.date] ) //eslint-disable-line
 
-    console.log(photo)
 
     const handleCheck = (date)=> {
         return likedList.some(function(el){
@@ -70,13 +69,11 @@ function Display({LSLikedList}){
 
     const changeClass = () =>{
         if(handleCheck(photo.date) === true){
-            console.log('photo is NOT in array')
             setLiked('Like')
             deleteLikedList(photo.date)
             setIcon(farHeart)
             setClassName('like')
         }else{
-            console.log('photo is in array')
             setLiked('Unlike')
             addToLikedList(photo)
             setIcon(faHeart)
@@ -86,8 +83,6 @@ function Display({LSLikedList}){
     const API_KEY = 'DXUUGOwFmoJZyyyeWI355njm4JXCa4licvy0cZNu'
 
     localStorage.setItem("likedList", JSON.stringify(likedList));
-
-    console.log(photo.media_type)
 
     return(
         <StyledDisplay>
