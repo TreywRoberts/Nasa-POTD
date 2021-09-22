@@ -118,7 +118,7 @@ export const StyledDisplay = styled.div`
     .search{
       width: 75%;
       h4{
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
       input{
           font-size: 2rem;
