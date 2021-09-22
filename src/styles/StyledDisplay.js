@@ -6,7 +6,7 @@ export const StyledDisplay = styled.div`
   justify-content: center;
   align-items:center;
   color: white;
-
+  text-align: center;
   .display-box{
     display: flex;
     flex-direction:column ;
@@ -99,5 +99,39 @@ export const StyledDisplay = styled.div`
 
   .liked:hover{
     cursor: pointer;
+  }
+
+  @media(max-width:500px){
+    .display-box{
+      width: 75%;
+      h2{
+          font-size: 2rem;
+      };
+      h3{
+          font-size: 1.5rem;
+      }
+      P{
+        font-size: 1.2rem;
+      }
+  }
+
+
+    .search{
+      width: 75%;
+
+      h4{
+        font-size: 2rem;
+      }
+      input{
+          font-size: 2rem;
+          width: 96%;
+      }
+      button{
+         width: 100%;
+      }
+      button:hover{
+          background: red;
+      }
+  }
   }
   `

@@ -34,4 +34,25 @@ margin-bottom: 3%;
     p{
         color: white;
     }
+
+    @media(max-width:500px){
+        .POTD-logo{
+            line-height: 100%;
+    }
+
+            h1{
+            font-size: 1.2rem;
+    }
+
+        a{
+            font-size:1rem ;
+        }
+
+        p{
+            font-size:0.8rem;
+        }
+        
+        
+
+    }
 `

@@ -8,7 +8,7 @@ import React from "react";
                 )
             } else if(photo.media_type === 'video') {
             return(
-                <iframe
+                <iframe title='video of the day'
                 source src={`${photo.url}&controls=0`} >
                 </iframe>
             ) 

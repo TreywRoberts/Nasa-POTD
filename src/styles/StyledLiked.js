@@ -58,4 +58,10 @@ export const StyledLiked = styled.div`
       height: 100vh;
       font-size: 3rem;
   }  
+
+  @media(max-width:500px){
+      button{
+          width:100%
+      }
+  }
   `
