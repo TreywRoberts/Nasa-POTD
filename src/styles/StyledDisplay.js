@@ -56,6 +56,7 @@ export const StyledDisplay = styled.div`
           height: 2.7rem;
           margin-top: 2%;
           font-size: 1.5rem;
+          background-color: white;
           font-weight: bolder;
           border: none;
           transition: ease all 1s;
@@ -114,17 +115,14 @@ export const StyledDisplay = styled.div`
         font-size: 1.2rem;
       }
   }
-
-
     .search{
       width: 75%;
-
       h4{
         font-size: 2rem;
       }
       input{
           font-size: 2rem;
-          width: 96%;
+          width: 95%;
       }
       button{
          width: 100%;

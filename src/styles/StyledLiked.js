@@ -60,6 +60,20 @@ export const StyledLiked = styled.div`
   }  
 
   @media(max-width:500px){
+    .display-box{    
+    width: 75%;
+
+    h2{
+        font-size: 2rem; 
+    }
+    h3{
+        text-decoration: underline;
+        font-size: 1.5rem;
+    }
+    p{
+        font-size:1.2rem;
+  }
+  }
       button{
           width:100%
       }
